@@ -1,0 +1,25 @@
+.intel { background: var(--mid); }
+.intel-pin { position: relative; height: 100vh; min-height: 620px; overflow: hidden; }
+.intel-canvas { position: absolute !important; inset: 0; } .intel-fallback { position: absolute; right: 6%; top: 18%; width: min(52vw, 560px); stroke: rgba(236, 230, 216, .3); fill: var(--ivory); }
+.intel-ui { position: relative; z-index: 2; height: 100%; padding: 6rem var(--pad) 2rem; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto 1fr auto auto; column-gap: var(--gap); pointer-events: none; }
+.intel-ui > * { pointer-events: auto; }
+.intel-ui .display { grid-column: 1 / 8; font-size: clamp(3rem, 7.4vw, 7.4rem); pointer-events: none; }
+.intel-copy { grid-column: 1 / 5; grid-row: 3; align-self: end; background: rgba(11, 19, 48, .78); backdrop-filter: blur(6px); padding: 1.1rem 1.2rem; border-left: 2px solid var(--cyan); }
+.intel-copy h3 { font: 400 1.7rem/1.1 var(--serif); margin-bottom: .5rem; } .intel-copy p { font-size: .95rem; color: #cfd6ea; max-width: 46ch; }
+.intel-lr { display: grid; grid-template-columns: auto 1fr; gap: .2rem .8rem; margin-top: .9rem; font-weight: 600; font-size: .9rem; } .intel-lr output { font-weight: 400; color: var(--cyan); text-align: right; } .intel-lr input { grid-column: 1 / -1; }
+.intel-hud { grid-column: 9 / 13; grid-row: 3; align-self: end; justify-self: end; width: min(100%, 17rem); background: rgba(7, 11, 22, .8); border: 1px solid var(--line); padding: .9rem 1rem; }
+.intel-hud dl { display: grid; gap: .3rem; } .intel-hud dl div { display: flex; justify-content: space-between; gap: 1rem; font-size: .88rem; } .intel-hud dt { color: var(--mute); } .intel-hud dd { font: 400 1.05rem var(--serif); }
+.spark { width: 100%; height: 54px; margin-top: .6rem; overflow: visible; } .spark polyline { fill: none; stroke: var(--cyan); stroke-width: 1.5; vector-effect: non-scaling-stroke; } .spark circle { fill: var(--ivory); }
+.intel-steps { grid-column: 1 / -1; grid-row: 4; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.intel-steps button { background: rgba(7, 11, 22, .7); border: 1px solid var(--line); padding: .5rem 1rem; font-size: .9rem; transition: border-color .2s, background .2s; } .intel-steps button:hover { border-color: var(--cyan); } .intel-steps button[aria-pressed="true"] { background: var(--ivory); color: var(--ink); border-color: var(--ivory); }
+.intel-note { position: absolute; right: var(--pad); top: 6.4rem; font-size: .78rem; color: var(--mute); max-width: 24ch; text-align: right; }
+.workflow { padding: clamp(4rem, 8vw, 8rem) var(--pad); background: var(--ink); }
+.workflow-h { font: 400 clamp(2rem, 4vw, 3.6rem)/1 var(--serif); margin-bottom: 2.4rem; max-width: 18ch; }
+.workflow ol { display: grid; grid-template-columns: repeat(5, 1fr); counter-reset: w; border-top: 1px solid var(--line); }
+.workflow li { padding: 1.1rem 1rem 1.4rem 0; border-right: 1px solid var(--line); padding-left: 1rem; display: grid; gap: .4rem; align-content: start; transition: background .25s; } .workflow li:first-child { padding-left: 0; } .workflow li:last-child { border-right: 0; }
+.workflow li:hover, .workflow li:focus-visible { background: rgba(79, 227, 255, .06); } .workflow i { font: italic 400 1.1rem var(--serif); color: var(--cyan); } .workflow b { font: 400 1.5rem/1.1 var(--serif); } .workflow span { color: var(--mute); font-size: .9rem; }
+@media (max-width: 900px) {
+  .intel-ui { grid-template-rows: auto 1fr auto auto auto; } .intel-copy { grid-column: 1 / -1; grid-row: 3; } .intel-hud { grid-column: 1 / -1; grid-row: 4; justify-self: stretch; width: auto; margin-top: .6rem; } .intel-steps { grid-row: 5; }
+  .intel-ui .display { grid-column: 1 / -1; font-size: clamp(2.6rem, 13vw, 4.6rem); } .intel-note { display: none; } .workflow ol { grid-template-columns: 1fr; } .workflow li { border-right: 0; border-bottom: 1px solid var(--line); padding-left: 0; }
+}
+@media (max-height: 640px) { .intel-pin { min-height: 640px; } }

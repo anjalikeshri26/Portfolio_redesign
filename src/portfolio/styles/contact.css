@@ -1,0 +1,13 @@
+.contact { background: var(--mid); padding: clamp(5rem, 10vw, 9rem) var(--pad) 2rem; display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gap); overflow: hidden; }
+.ct-h { grid-column: 1 / 9; font: 400 clamp(3.4rem, 10.4vw, 11rem)/.88 var(--serif); letter-spacing: -.03em; text-transform: uppercase; }
+.ct-h .ln:last-child { font-style: italic; color: var(--cyan); }
+.ct-side { grid-column: 9 / 13; display: grid; gap: 2rem; align-content: space-between; justify-items: start; }
+.ct-ring { position: relative; display: grid; place-items: center; width: clamp(9rem, 15vw, 13rem); aspect-ratio: 1; border-radius: 50%; background: var(--cyan); color: var(--ink); text-decoration: none; font: 400 clamp(1.4rem, 2.2vw, 2rem)/1 var(--serif); text-align: center; }
+.ct-ring svg { position: absolute; inset: -14%; width: 128%; height: 128%; animation: ring 26s linear infinite; } .ct-ring text { font: 500 11.4px var(--sans); fill: var(--ivory); letter-spacing: .02em; } @keyframes ring { to { transform: rotate(360deg); } }
+.ct-rows { grid-column: 1 / -1; margin-top: clamp(2.5rem, 6vw, 6rem); border-top: 1px solid var(--line); }
+.ct-rows a, .ct-copy { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; width: 100%; padding: 1.2rem 0; border: 0; border-bottom: 1px solid var(--line); background: none; text-decoration: none; text-align: left; overflow: hidden; isolation: isolate; }
+.ct-rows a::before, .ct-copy::before { content: ""; position: absolute; inset: 0; background: var(--ivory); transform: translateY(101%); transition: transform .45s cubic-bezier(.2, .8, .2, 1); z-index: -1; }
+.ct-rows a:hover::before, .ct-rows a:focus-visible::before, .ct-copy:hover::before, .ct-copy:focus-visible::before { transform: none; } .ct-rows a:hover, .ct-rows a:focus-visible, .ct-copy:hover, .ct-copy:focus-visible { color: var(--ink); padding-inline: 1rem; }
+.ct-rows a, .ct-copy { transition: color .3s, padding .4s cubic-bezier(.2, .8, .2, 1); } .ct-rows span { font-size: .95rem; color: inherit; opacity: .7; } .ct-rows b { font: 400 clamp(1.5rem, 3.4vw, 3rem)/1.1 var(--serif); }
+.ct-foot { grid-column: 1 / -1; margin-top: clamp(3rem, 6vw, 5rem); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 2rem; font-size: .88rem; color: var(--mute); } .ct-foot button { background: none; border: 0; text-decoration: underline; text-underline-offset: 4px; padding: 0; } .ct-foot a { color: inherit; }
+@media (max-width: 900px) { .ct-h, .ct-side { grid-column: 1 / -1; } .ct-side { grid-template-columns: 1fr; margin-top: 1rem; } .ct-rows a, .ct-copy { flex-direction: column; gap: .2rem; } }

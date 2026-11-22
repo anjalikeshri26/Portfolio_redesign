@@ -1,0 +1,20 @@
+.toolkit { background: var(--ivory); color: var(--ink); padding: clamp(5rem, 10vw, 9rem) var(--pad) 0; } .toolkit :focus-visible { outline-color: var(--blue); }
+.tk-head { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gap); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 5rem); } .tk-head .display { grid-column: 1 / 8; } .tk-head p { grid-column: 8 / 13; color: var(--mute-l); max-width: 44ch; }
+.tk-map { position: relative; display: grid; grid-template-columns: minmax(12rem, 20rem) 1fr; gap: clamp(2rem, 8vw, 9rem); align-items: start; }
+.tk-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; } .tk-lines path { fill: none; stroke: var(--blue); stroke-width: 1.4; stroke-dasharray: 1; stroke-opacity: .75; }
+.tk-projects { display: grid; gap: .35rem; position: relative; z-index: 1; }
+.tk-projects button { width: 100%; text-align: left; padding: .8rem 1rem; background: var(--ivory); border: 1px solid var(--ink); font: 400 1.35rem/1.1 var(--serif); transition: background .2s, color .2s, transform .25s; }
+.tk-projects button:hover { transform: translateX(6px); } .tk-projects button[aria-pressed="true"] { background: var(--ink); color: var(--ivory); } .tk-projects button.lit { background: var(--blue); color: #fff; border-color: var(--blue); }
+.tk-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.8rem 2rem; position: relative; z-index: 1; }
+.tk-groups section { border-top: 1px solid var(--ink); padding-top: .6rem; } .tk-groups h3 { font: 600 .85rem var(--sans); color: var(--mute-l); margin-bottom: .6rem; }
+.tk-groups ul { display: flex; flex-wrap: wrap; gap: .35rem; }
+.tk-groups button { background: var(--ivory); border: 1px solid var(--line-l); padding: .3rem .7rem; font-size: .92rem; transition: background .2s, color .2s, border-color .2s; }
+.tk-groups button:hover, .tk-groups button[aria-pressed="true"] { background: var(--ink); color: var(--ivory); border-color: var(--ink); } .tk-groups button.lit { background: var(--blue); color: #fff; border-color: var(--blue); }
+.tk-groups button.solo { border-style: dashed; color: var(--mute-l); } .tk-groups button.solo:hover, .tk-groups button.solo[aria-pressed="true"] { color: var(--ivory); }
+.tk-hint { margin-top: 2.2rem; font: 400 clamp(1.3rem, 2.2vw, 1.9rem)/1.25 var(--serif); min-height: 2.5em; max-width: 44ch; } .tk-foot { color: var(--mute-l); font-size: .88rem; max-width: 72ch; margin-bottom: clamp(3rem, 6vw, 6rem); }
+.practice { background: var(--ink); color: var(--ivory); margin: 0 calc(-1 * var(--pad)); padding: clamp(3rem, 6vw, 6rem) var(--pad); } .practice :focus-visible { outline-color: var(--cyan); }
+.practice-h { font: 400 clamp(2.2rem, 4.4vw, 4.2rem)/1 var(--serif); margin-bottom: .6rem; } .practice .ct-sub { margin-bottom: 2rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: var(--gap); } .sc { border-top: 1px solid var(--line); padding-top: .9rem; } .sh { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; } .sh h3 { font: 400 1.6rem var(--serif); } .sh a { color: var(--cyan); font-size: .85rem; }
+.sns { display: flex; flex-wrap: wrap; gap: .6rem 1.8rem; margin: .8rem 0; } .sn b { display: block; font: 400 2rem/1.1 var(--serif); color: var(--ivory); } .sn small, .sc .sub { color: var(--mute); font-size: .85rem; }
+.br { display: grid; grid-template-columns: 4.5rem 1fr 2.2rem; gap: .6rem; align-items: center; font-size: .85rem; margin: .3rem 0; } .bar { height: 4px; background: var(--line); } .bar i { display: block; height: 100%; } .heat { width: 100%; margin-top: .8rem; }
+@media (max-width: 900px) { .tk-head .display, .tk-head p { grid-column: 1 / -1; } .tk-map { grid-template-columns: 1fr; gap: 2rem; } .tk-projects { grid-template-columns: 1fr 1fr; } .tk-projects button { font-size: 1.1rem; } .tk-projects button:hover { transform: none; } }

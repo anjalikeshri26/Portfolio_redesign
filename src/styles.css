@@ -1,0 +1,20 @@
+:root { --navy:#060b18; --blue:#2f6bff; --cyan:#4fe3ff; --violet:#7b5cff; --ink:#eaf0ff; }
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; background: var(--navy); color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif; overflow: hidden; }
+.stage { position: fixed; inset: 0; }
+.ui-btn { position: fixed; z-index: 5; background: rgba(6,11,24,.7); color: var(--ink);
+  border: 1px solid rgba(234,240,255,.35); padding: .6rem 1rem; font: 500 .9rem "IBM Plex Sans", sans-serif;
+  cursor: pointer; border-radius: 3px; }
+.ui-btn:hover, .ui-btn:focus-visible { border-color: var(--cyan); outline: 2px solid var(--cyan); outline-offset: 2px; }
+.skip { right: 1.25rem; bottom: 1.25rem; }
+.veil { position: fixed; inset: 0; z-index: 4; background: var(--navy); opacity: 0; pointer-events: none; display: grid; place-items: center; }
+.veil.on { pointer-events: auto; }
+.holder { display: flex; gap: 1.5rem; align-items: center; max-width: min(640px, 90vw); }
+.holder img { width: 120px; height: 150px; object-fit: cover; border-radius: 3px; }
+.holder h1 { font: 700 clamp(1.6rem, 4vw, 2.6rem)/1.1 "Space Grotesk", sans-serif; margin: 0 0 .5rem; }
+.holder p { margin: 0 0 1rem; color: #aab6d3; line-height: 1.5; max-width: 46ch; }
+.fallback { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 2rem; }
+.fallback h1 { font: 700 clamp(1.8rem, 5vw, 3.2rem) "Space Grotesk", sans-serif; margin: 0 0 .75rem; }
+.fallback .ui-btn { position: static; margin-top: 1rem; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
